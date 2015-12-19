@@ -9,12 +9,6 @@ void loop();
 
 //user definitions
 void init();
-void serial_print(char* StringPtr);
-unsigned char serial_receive(void);
-void serial_send( unsigned char data);
-void serial_init(int baud);
-int read_adc(uint8_t prt);
-void initADC(void);
 void test1(void);
 void test2(void);
 
@@ -24,6 +18,13 @@ void test2(void);
 #define out(register, port) register |= _BV(port)
 #define in(register, port) register &= ~_BV(port)
 #define read_pin(register, port) (register & _BV(port)) == 0 ? 0 : 1
+
+void serial_print(char* StringPtr);
+unsigned char serial_receive(void);
+void serial_send( unsigned char data);
+void serial_init(int baud);
+int read_adc(uint8_t prt);
+void initADC(void);
 
 int main(void)
 {
